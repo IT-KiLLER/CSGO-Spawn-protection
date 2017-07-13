@@ -19,7 +19,7 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	sm_spawn_protection_time  = CreateConVar("sm_spawn_protection_time", "15.0", "How long the player should be protected after spawn. 0 = disabled or time 1-180 seconds.", _, true, 0.0, true, 180.0);
+	sm_spawn_protection_time  = CreateConVar("sm_spawn_protection_time", "15.0", "How long the player will be protected after spawn. 0 = disabled or time 1-180 seconds.", _, true, 0.0, true, 180.0);
 	HookEvent("player_spawn", Event_OnPlayerSpawn, EventHookMode_Pre);
 	sm_spawn_protection_time.AddChangeHook(OnConVarChange);
 	for(int client = 1; client <= MaxClients; client++)
